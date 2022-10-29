@@ -17,6 +17,7 @@ export default function Index() {
           <li key={coin.id}>
             <Link href="/coin/[id]" as={`/coin/${coin.id}`}>
               {`Coin ${coin.id}`}
+            
             </Link>
           </li>
         ))}

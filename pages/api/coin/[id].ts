@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function userHandler(req: NextApiRequest, res: NextApiResponse) {
   const {
-    query: { id, name },
+    query: { id, name ,string},
     method,
   } = req
 
