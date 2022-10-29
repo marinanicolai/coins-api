@@ -1,9 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import type { User } from '../../interfaces'
+import type { NextApiRequest, NextApiResponse } from "next";
+import type { Image } from "../../interfaces";
 
-const images = [{ id: 1 }, { id: 2 }, { id: 3 }, {id:4}]
+const images: Image[] = [
+  { id: 1, src: "/image1.jpg" },
+  { id: 2, src: "/image2.jpg" },
+];
 
 export default function handler(_req: NextApiRequest, res: NextApiResponse) {
-  // Get data from your database
-  res.status(200).json(images)
+  res.status(200).json(images);
 }
