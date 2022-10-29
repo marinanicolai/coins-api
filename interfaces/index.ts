@@ -1,4 +1,4 @@
-export type User = {
+export type Coin = {
   id: number;
   name?: string;
 };

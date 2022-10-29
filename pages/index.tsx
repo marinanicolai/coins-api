@@ -1,13 +1,13 @@
-import type { User } from "../interfaces";
+import type { Coin } from "../interfaces";
 import useSwr from "swr";
 import Link from "next/link";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Index() {
-  const { data, error } = useSwr<User[]>("/api/coins", fetcher);
+  const { data, error } = useSwr<Coin[]>("/api/coins", fetcher);
 
-  if (error) return <div>Failed to load users</div>;
+  if (error) return <div>Failed to load coins</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
@@ -16,7 +16,7 @@ export default function Index() {
         {data.map((coin) => (
           <li key={coin.id}>
             <Link href="/coin/[id]" as={`/coin/${coin.id}`}>
-              {`User ${coin.id}`}
+              {`Coin ${coin.id}`}
             </Link>
           </li>
         ))}
